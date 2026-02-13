@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Journal | ANANTARA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg-deep: #0a0a0a; --text-gold: #c5a059; --text-body: #a0a0a0; }
+        body { background-color: var(--bg-deep); color: var(--text-body); font-family: 'Montserrat', sans-serif; margin: 0; padding: 0; line-height: 1.8; font-weight: 300; }
+        
+        nav { padding: 40px 60px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .brand { font-family: 'Cormorant Garamond', serif; font-size: 2rem; letter-spacing: 0.2em; text-transform: uppercase; color: #fff; text-decoration: none; }
+        .nav-links { display: flex; gap: 40px; }
+        .nav-links a { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; color: #888; text-decoration: none; transition: 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--text-gold); }
+
+        .container { max-width: 800px; margin: 0 auto; padding: 100px 20px; }
+        h1 { font-family: 'Cormorant Garamond'; font-size: 3.5rem; color: #e0e0e0; text-align: center; margin-bottom: 80px; font-weight: 300; }
+        
+        article { border-bottom: 1px solid #333; padding-bottom: 50px; margin-bottom: 50px; }
+        .date { font-size: 0.7rem; letter-spacing: 0.2em; color: #666; display: block; margin-bottom: 10px; }
+        
+        h2 { margin: 0 0 20px 0; }
+        h2 a { font-family: 'Cormorant Garamond'; font-size: 2.2rem; color: #e0e0e0; font-weight: 300; text-decoration: none; transition: 0.3s; }
+        h2 a:hover { color: var(--text-gold); }
+        
+        .read-more { font-family: 'Cormorant Garamond'; font-style: italic; color: var(--text-gold); margin-top: 20px; display: inline-block; text-decoration: none; border-bottom: 1px solid transparent; transition: 0.3s; }
+        .read-more:hover { border-bottom-color: var(--text-gold); }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="brand">Anantara</a>
+        <div class="nav-links">
+            <a href="index.html">The Threshold</a>
+            <a href="rituals.html">Rituals</a>
+            <a href="sanctuaries.html">Sanctuaries</a>
+            <a href="journal.html" class="active">Journal</a>
+            <a href="membership.html" style="color: var(--text-gold);">Membership</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Reflections</h1>
+        
+        <article>
+            <span class="date">FEB 13, 2026</span>
+            <h2><a href="architect_of_silence.html">The Architect of Silence</a></h2>
+            <p>For the individual who has mastered the speed of the world, and now seeks the power to stop it. We explore why the traditional indicators of status have become noise.</p>
+            <a href="architect_of_silence.html" class="read-more">Read Entry &rarr;</a>
+        </article>
+
+        <article>
+            <span class="date">JAN 28, 2026</span>
+            <h2><a href="haptic_hunger.html">Haptic Hunger</a></h2>
+            <p>Having spent a career dealing with abstractions—software, stocks, strategies—the elite have a visceral need to touch something real. The science behind why we need the grit of wet clay.</p>
+            <a href="haptic_hunger.html" class="read-more">Read Entry &rarr;</a>
+        </article>
+    </div>
+</body>
+</html>
