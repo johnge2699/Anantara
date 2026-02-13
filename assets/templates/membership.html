@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Membership | ANANTARA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+    <style>
+        /* LUXURY THEME VARIABLES */
+        :root { --bg-deep: #0a0a0a; --text-gold: #c5a059; --text-body: #a0a0a0; --border-color: #333; }
+        
+        body { background-color: var(--bg-deep); color: var(--text-body); font-family: 'Montserrat', sans-serif; margin: 0; padding: 0; line-height: 1.8; font-weight: 300; }
+        
+        /* NAVIGATION */
+        nav { padding: 40px 60px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .brand { font-family: 'Cormorant Garamond', serif; font-size: 2rem; letter-spacing: 0.2em; text-transform: uppercase; color: #fff; text-decoration: none; }
+        .nav-links a { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; color: #888; text-decoration: none; margin-left: 30px; transition: 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--text-gold); }
+
+        /* LAYOUT */
+        .container { max-width: 600px; margin: 0 auto; padding: 100px 20px; }
+        h1 { font-family: 'Cormorant Garamond'; font-size: 3.5rem; color: #e0e0e0; text-align: center; margin-bottom: 20px; font-weight: 300; }
+        p.subtitle { text-align: center; margin-bottom: 80px; color: #666; font-size: 0.9rem; letter-spacing: 0.1em; }
+        
+        /* FORM STYLING */
+        .form-group { margin-bottom: 40px; position: relative; }
+        
+        label { 
+            display: block; 
+            font-size: 0.7rem; 
+            letter-spacing: 0.2em; 
+            text-transform: uppercase; 
+            margin-bottom: 15px; 
+            color: var(--text-gold); 
+        }
+        
+        /* Input & Textarea Styling */
+        input, textarea { 
+            width: 100%; 
+            background: transparent; 
+            border: none; 
+            border-bottom: 1px solid #333; 
+            color: #fff; 
+            font-family: 'Cormorant Garamond'; 
+            font-size: 1.6rem; 
+            padding: 10px 0; 
+            outline: none; 
+            transition: border 0.4s; 
+            border-radius: 0; /* Removes default radius */
+        }
+        
+        input:focus, textarea:focus { border-bottom-color: var(--text-gold); }
+
+        /* --- CUSTOM LUXURY DROPDOWN CSS --- */
+        .custom-select-wrapper {
+            position: relative;
+            user-select: none;
+            width: 100%;
+        }
+
+        .custom-select {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .custom-select__trigger {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-family: 'Cormorant Garamond';
+            font-size: 1.6rem;
+            color: #fff; /* Default text color */
+            padding: 10px 0;
+            cursor: pointer;
+            border-bottom: 1px solid #333;
+            transition: 0.3s;
+        }
+
+        .custom-select__trigger:hover { border-bottom-color: #666; }
+
+        .custom-options {
+            position: absolute;
+            display: block;
+            top: 100%;
+            left: 0;
+            right: 0;
+            border: 1px solid var(--text-gold);
+            border-top: 0;
+            background: #0f0f0f; /* Black Background */
+            transition: all 0.3s;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .custom-select.open .custom-options {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: all;
+        }
+
+        .custom-option {
+            position: relative;
+            display: block;
+            padding: 15px 20px;
+            font-family: 'Montserrat';
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            color: #888;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-bottom: 1px solid #222;
+        }
+
+        .custom-option:hover {
+            cursor: pointer;
+            background-color: var(--text-gold);
+            color: #000;
+        }
+
+        .custom-option.selected {
+            color: var(--text-gold);
+        }
+
+        .arrow {
+            border: solid var(--text-gold);
+            border-width: 0 1px 1px 0;
+            display: inline-block;
+            padding: 5px;
+            transform: rotate(45deg);
+            transition: 0.3s;
+            margin-bottom: 5px;
+        }
+        
+        .custom-select.open .arrow { transform: rotate(-135deg); margin-bottom: -5px; }
+
+        /* BUTTON */
+        button { 
+            width: 100%; 
+            background: transparent; 
+            border: 1px solid var(--text-gold); 
+            color: var(--text-gold); 
+            padding: 20px; 
+            text-transform: uppercase; 
+            letter-spacing: 0.2em; 
+            font-size: 0.8rem; 
+            cursor: pointer; 
+            margin-top: 40px; 
+            transition: 0.4s; 
+            font-family: 'Montserrat';
+        }
+        
+        button:hover { background: var(--text-gold); color: #000; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="brand">Anantara</a>
+        <div class="nav-links">
+            <a href="index.html">The Threshold</a>
+            <a href="rituals.html">Rituals</a>
+            <a href="sanctuaries.html">Sanctuaries</a>
+            <a href="journal.html">Journal</a>
+            <a href="membership.html" class="active" style="color: var(--text-gold);">Membership</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Membership</h1>
+        <p class="subtitle">We do not seek clients. We seek custodians of silence.</p>
+
+        <form id="appForm">
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" required placeholder="Enter your name">
+            </div>
+
+            <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" required placeholder="email@address.com">
+            </div>
+
+            <div class="form-group">
+                <label>Why do you seek subtraction?</label>
+                <textarea rows="1" placeholder="Describe your need for silence..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Preferred Sanctuary</label>
+                <select name="sanctuary" id="sanctuary-select" style="display:none;">
+                    <option value="mumbai">Mumbai | The Iron Sanctuary</option>
+                    <option value="jaipur">Jaipur | The Stone Haveli</option>
+                    <option value="varanasi">Varanasi | The River Terrace</option>
+                </select>
+                
+                <div class="custom-select-wrapper">
+                    <div class="custom-select">
+                        <div class="custom-select__trigger">
+                            <span>Select Sanctuary</span>
+                            <div class="arrow"></div>
+                        </div>
+                        <div class="custom-options">
+                            <span class="custom-option" data-value="mumbai">Mumbai | The Iron Sanctuary</span>
+                            <span class="custom-option" data-value="jaipur">Jaipur | The Stone Haveli</span>
+                            <span class="custom-option" data-value="varanasi">Varanasi | The River Terrace</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button type="button" onclick="submitForm()">Submit Application</button>
+        </form>
+    </div>
+
+    <script>
+        // Dropdown Logic
+        const wrapper = document.querySelector('.custom-select-wrapper');
+        const select = wrapper.querySelector('.custom-select');
+        const trigger = wrapper.querySelector('.custom-select__trigger');
+        const options = wrapper.querySelectorAll('.custom-option');
+        const hiddenInput = document.getElementById('sanctuary-select');
+        const triggerSpan = trigger.querySelector('span');
+
+        // Toggle Open/Close
+        trigger.addEventListener('click', function() {
+            select.classList.toggle('open');
+        });
+
+        // Handle Selection
+        for (const option of options) {
+            option.addEventListener('click', function() {
+                // Update styling
+                if (!this.classList.contains('selected')) {
+                    const selected = wrapper.querySelector('.option.selected');
+                    if (selected) selected.classList.remove('selected');
+                    this.classList.add('selected');
+                    
+                    // Update text and hidden value
+                    triggerSpan.textContent = this.textContent;
+                    triggerSpan.style.color = '#c5a059'; // Turn text gold upon selection
+                    hiddenInput.value = this.getAttribute('data-value');
+                }
+                // Close dropdown
+                select.classList.remove('open');
+            });
+        }
+
+        // Close if clicked outside
+        window.addEventListener('click', function(e) {
+            if (!select.contains(e.target)) {
+                select.classList.remove('open');
+            }
+        });
+
+        // Form Submit Alert
+        function submitForm() {
+            // Simple validation check
+            const name = document.querySelector('input[type="text"]').value;
+            if(name === "") {
+                alert("Please enter your name.");
+                return;
+            }
+            alert('Application Received.\n\nWe will review your digital footprint and contact you if you meet the criteria for "Digital Shedding".');
+        }
+    </script>
+</body>
+</html>

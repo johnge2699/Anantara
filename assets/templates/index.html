@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ANANTARA | The House of Pause</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+    <style>
+        /* SHARED LUXURY STYLES */
+        :root { --bg-deep: #0a0a0a; --text-gold: #c5a059; --text-body: #a0a0a0; --border: #333; }
+        body { background-color: var(--bg-deep); color: var(--text-body); font-family: 'Montserrat', sans-serif; margin: 0; padding: 0; line-height: 1.8; font-weight: 300; }
+        h1, h2, h3 { font-family: 'Cormorant Garamond', serif; color: #e0e0e0; margin: 0; font-weight: 300; }
+        h1 { font-size: 4rem; letter-spacing: 0.05em; line-height: 1.1; }
+        h2 { font-size: 2.5rem; color: var(--text-gold); margin-bottom: 20px; }
+        a { text-decoration: none; color: inherit; transition: color 0.4s ease; }
+        a:hover { color: var(--text-gold); }
+        
+        /* NAVIGATION */
+        nav { padding: 40px 60px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .brand { font-family: 'Cormorant Garamond', serif; font-size: 2rem; letter-spacing: 0.2em; text-transform: uppercase; color: #fff; }
+        .nav-links { display: flex; gap: 40px; }
+        .nav-links a { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; color: #888; }
+        .nav-links a.active { color: var(--text-gold); border-bottom: 1px solid var(--text-gold); padding-bottom: 5px; }
+
+        /* HERO & LAYOUT */
+        .container { max-width: 1200px; margin: 0 auto; padding: 100px 20px; }
+        .gold-line { width: 60px; height: 1px; background-color: var(--text-gold); margin: 30px 0; }
+        .btn-luxury { display: inline-block; border: 1px solid var(--text-gold); color: var(--text-gold); padding: 15px 40px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.2em; margin-top: 30px; transition: all 0.5s ease; }
+        .btn-luxury:hover { background-color: var(--text-gold); color: var(--bg-deep); }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="brand">Anantara</a>
+        <div class="nav-links">
+            <a href="index.html" class="active">The Threshold</a>
+            <a href="rituals.html">Rituals</a>
+            <a href="sanctuaries.html">Sanctuaries</a>
+            <a href="journals.html">Journals</a>
+            <a href="membership.html" style="color: var(--text-gold);">Membership</a>
+        </div>
+    </nav>
+
+    <section style="height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+        <p style="text-transform: uppercase; letter-spacing: 0.3em; font-size: 0.8rem; color: #666; margin-bottom: 30px;">The House of Pause</p>
+        <h1 style="max-width: 900px;">The Sovereignty of <br><span style="color: var(--text-gold);">Subtraction.</span></h1>
+        <div class="gold-line"></div>
+        <p style="max-width: 600px; font-size: 1.2rem;">Trade digital noise for ancestral silence. Reclaim focus through the rhythm of the hand.</p>
+        <a href="membership.html" class="btn-luxury">Enter The Sanctuary</a>
+    </section>
+</body>
+</html>
